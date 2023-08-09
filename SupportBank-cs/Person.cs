@@ -1,7 +1,4 @@
-namespace SupportBank
-{
-    
-}
+namespace SupportBank;
 
 public class Person
 {
