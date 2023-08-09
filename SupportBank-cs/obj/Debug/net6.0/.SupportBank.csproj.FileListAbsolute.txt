@@ -1,0 +1,15 @@
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/bin/Debug/net6.0/.SupportBank
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/bin/Debug/net6.0/.SupportBank.deps.json
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/bin/Debug/net6.0/.SupportBank.runtimeconfig.json
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/bin/Debug/net6.0/.SupportBank.dll
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/bin/Debug/net6.0/.SupportBank.pdb
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/obj/Debug/net6.0/.SupportBank.csproj.AssemblyReference.cache
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/obj/Debug/net6.0/.SupportBank.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/obj/Debug/net6.0/.SupportBank.AssemblyInfoInputs.cache
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/obj/Debug/net6.0/.SupportBank.AssemblyInfo.cs
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/obj/Debug/net6.0/.SupportBank.csproj.CoreCompileInputs.cache
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/obj/Debug/net6.0/.SupportBank.dll
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/obj/Debug/net6.0/refint/.SupportBank.dll
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/obj/Debug/net6.0/.SupportBank.pdb
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/obj/Debug/net6.0/.SupportBank.genruntimeconfig.cache
+/Users/rafebletso/Training/SupportBank/SupportBank-cs/obj/Debug/net6.0/ref/.SupportBank.dll
