@@ -8,7 +8,7 @@ class CSVParser
 {
     public static void Main()
     {
-        string filePath = @"C:\Users\Koushik\Desktop\Questions\ConsoleApp\Data.csv";
+        string filePath = @"C:\Users\rafebletso\Training\SupportBank\SupportBank-cs\Transactions2014.csv";
         StreamReader reader = null;
 
         if (File.Exists(filePath))
@@ -30,7 +30,7 @@ class CSVParser
                 {
                     Console.Write(value + "\t");
                 }
-                Console.WriteLine(); // Move to the next line for the next row
+                Console.WriteLine();
             }
         }
         else
