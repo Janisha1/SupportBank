@@ -1,6 +1,6 @@
 namespace SupportBank;
 
-class CSVParser
+public class CSVParser
 {
     public void Parse()
     {

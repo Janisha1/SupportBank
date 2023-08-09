@@ -1,28 +1,31 @@
 ﻿using System;
 using SupportBank;
 
-Ledger ledger = new Ledger();
+var parser = new CSVParser();
+parser.Parse();
 
-Person john = new Person("John");
-Person jane = new Person("Jane");
+// Ledger ledger = new Ledger();
 
-Transaction transaction1 = new Transaction
-{
-    Timestamp = DateTime.Now,
-    Payer = john,
-    Payee = jane,
-    Amount = 50.00m
-};
+// Person john = new Person("John");
+// Person jane = new Person("Jane");
 
-Transaction transaction2 = new Transaction
-{
-    Timestamp = DateTime.Now,
-    Payer = jane,
-    Payee = john,
-    Amount = 30.00m
-};
+// Transaction transaction1 = new Transaction
+// {
+//     Timestamp = DateTime.Now,
+//     Payer = john,
+//     Payee = jane,
+//     Amount = 50.00m
+// };
 
-ledger.AddTransaction(transaction1);
-ledger.AddTransaction(transaction2);
+// Transaction transaction2 = new Transaction
+// {
+//     Timestamp = DateTime.Now,
+//     Payer = jane,
+//     Payee = john,
+//     Amount = 30.00m
+// };
 
-ledger.PrintLedger();
+// ledger.AddTransaction(transaction1);
+// ledger.AddTransaction(transaction2);
+
+// ledger.PrintLedger();
