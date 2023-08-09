@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-
-namespace SupportBank
+namespace SupportBank;
 
 class CSVParser
 {
     public static void Main()
     {
-        string filePath = @"C:\Users\rafebletso\Training\SupportBank\SupportBank-cs\Transactions2014.csv";
+        string filePath = @"./Transactions2014.csv";
         StreamReader reader = null;
 
         if (File.Exists(filePath))
