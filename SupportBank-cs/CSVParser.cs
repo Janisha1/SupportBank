@@ -2,7 +2,7 @@ namespace SupportBank;
 
 class CSVParser
 {
-    public static void Main()
+    public void Parse()
     {
         string filePath = @"./Transactions2014.csv";
         StreamReader reader = null;
