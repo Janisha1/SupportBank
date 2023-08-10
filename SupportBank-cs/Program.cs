@@ -72,6 +72,11 @@ static void PrintTransactionsForAccount(Ledger ledger, string accountName)
         {
             Console.WriteLine($"Date: {transaction.Timestamp}, Payer: {transaction.Payer.Name}, Payee: {transaction.Payee.Name}, Amount: {transaction.Amount:C}, Narrative: {transaction.Narrative}");
         }
+        else 
+        {
+            Console.WriteLine($"Name not found {accountName}");
+            return;
+        }
     }
 }
 
