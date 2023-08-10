@@ -3,14 +3,14 @@ using System.Globalization;
 
 public class CSVParser
 {
-    public void Parse()
+    public Ledger Parse()
     {
         string filePath = @"./Transactions2014.csv";
+        Ledger ledger = new Ledger();
 
         if (File.Exists(filePath))
         {
             StreamReader reader = new StreamReader(File.OpenRead(filePath));
-            Ledger ledger = new Ledger();
             int rowCount = 0;
 
             while (!reader.EndOfStream)
@@ -42,13 +42,14 @@ public class CSVParser
                     ledger.AddTransaction(transaction);
                 }
             }
-            ledger.PrintLedger();
+            // ledger.PrintLedger();
         }
         else
         {
             Console.WriteLine("File doesn't exist");
         }
 
-        Console.ReadLine();
+        return ledger;
     }
 }
+
