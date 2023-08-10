@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Globalization;
 using SupportBank;
 
 var parser = new CSVParser();
 parser.Parse();
-
 
 //Ledger ledger = new Ledger();
 

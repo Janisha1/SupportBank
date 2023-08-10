@@ -1,4 +1,5 @@
 namespace SupportBank;
+using System.Globalization;
 
 public class CSVParser
 {
@@ -32,7 +33,7 @@ public class CSVParser
                     Person payee = new Person(payeeName);
 
                     var transaction = new Transaction
-                    (DateTime.Parse(values[0])
+                    (DateTime.Parse(values[0], new CultureInfo("en-GB"))
                     ,payer
                     ,payee
                     ,values[3]
