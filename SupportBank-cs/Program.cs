@@ -35,25 +35,27 @@ Console.WriteLine("1. List All");
 Console.WriteLine("2. List [Account]");
 
 string choice = Console.ReadLine();
-
-if (choice == "1")
+if(!string.IsNullOrWhiteSpace(choice))
 {
-    Dictionary<string, decimal> balances = CalculateBalances(ledger);
-    report.ListAll(balances);
-}
-else if (choice == "2")
-{
-    Console.Write("Enter account name: ");
-    string accountName = Console.ReadLine();
-    Dictionary<string, decimal> balances = CalculateBalances(ledger);
-    if (!balances.ContainsKey(accountName))
+    if (choice == "1")
     {
-        Console.WriteLine($"Name not found {accountName}");
-    } 
-    else
+        Dictionary<string, decimal> balances = CalculateBalances(ledger);
+        report.ListAll(balances);
+    }
+    else if (choice == "2")
     {
-       report.ListAccount(ledger, accountName);
-    }    
+        Console.Write("Enter account name: ");
+        string accountName = Console.ReadLine();
+        Dictionary<string, decimal> balances = CalculateBalances(ledger);
+        if (!balances.ContainsKey(accountName))
+        {
+            Console.WriteLine($"Name not found {accountName}");
+        } 
+        else
+        {
+        report.ListAccount(ledger, accountName);
+        }    
+    }
 }
 else
 {
