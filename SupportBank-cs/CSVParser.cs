@@ -5,7 +5,8 @@ public class CSVParser
 {
     public Ledger Parse()
     {
-        string filePath = @"./Transactions2014.csv";
+        // string filePath = @"./Transactions2014.csv";
+        string filePath = @"./DodgyTransactions2015.csv";
         Ledger ledger = new Ledger();
 
         if (File.Exists(filePath))
@@ -16,11 +17,11 @@ public class CSVParser
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
-                if(line != null)
+                if (line != null)
                 {
                     var values = line.Split(',');
-                    rowCount ++;
-                    if(rowCount == 1)
+                    rowCount++;
+                    if (rowCount == 1)
                     {
                         List<string> headerLine = new List<string>(values);
                         continue;
@@ -32,13 +33,33 @@ public class CSVParser
                     Person payer = new Person(payerName);
                     Person payee = new Person(payeeName);
 
-                    var transaction = new Transaction
-                    (DateTime.Parse(values[0], new CultureInfo("en-GB"))
-                    ,payer
-                    ,payee
-                    ,values[3]
-                    ,decimal.Parse(values[4])
+                    DateTime transactionDate;
+                    if (!DateTime.TryParseExact(
+                        values[0],
+                        "dd/MM/yyyy",
+                        CultureInfo.InvariantCulture,
+                        DateTimeStyles.None,
+                        out transactionDate))
+                    {
+                        Console.WriteLine($"Invalid date format in line {rowCount}: {values[0]}");
+                        continue;
+                    }
+
+                    string amountStr = values[4];
+                    if (!decimal.TryParse(amountStr, out decimal amount))
+                    {
+                        Console.WriteLine($"Invalid amount format in line {rowCount}: {amountStr}");
+                        continue;
+                    }
+
+                    var transaction = new Transaction(
+                        transactionDate,
+                        payer,
+                        payee,
+                        values[3],
+                        amount
                     );
+
                     ledger.AddTransaction(transaction);
                 }
             }
@@ -51,4 +72,5 @@ public class CSVParser
         return ledger;
     }
 }
+
 
