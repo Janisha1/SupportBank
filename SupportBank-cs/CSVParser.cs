@@ -42,7 +42,6 @@ public class CSVParser
                     ledger.AddTransaction(transaction);
                 }
             }
-            // ledger.PrintLedger();
         }
         else
         {

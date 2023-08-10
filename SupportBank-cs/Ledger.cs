@@ -2,17 +2,17 @@ namespace SupportBank;
 
 public class Ledger
 {
-    private List<Transaction> transactions = new List<Transaction>();
+    public List<Transaction> Transactions {get;} = new List<Transaction>();
 
     public void AddTransaction(Transaction transaction)
     {
-        transactions.Add(transaction);
+        Transactions.Add(transaction);
     }
 
     public void PrintLedger()
     {
         Console.WriteLine("Transaction Ledger:");
-        foreach (Transaction transaction in transactions)
+        foreach (Transaction transaction in Transactions)
         {
             Console.WriteLine($"{transaction.Timestamp}: {transaction.Payer.Name} paid {transaction.Amount:C} to {transaction.Payee.Name}");
         }
