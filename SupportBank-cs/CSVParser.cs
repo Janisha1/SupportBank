@@ -1,12 +1,12 @@
-namespace SupportBank;
 using System.Globalization;
+namespace SupportBank;
 
 public class CSVParser
 {
     public Ledger Parse()
     {
-        // string filePath = @"./Transactions2014.csv";
-        string filePath = @"./DodgyTransactions2015.csv";
+        string filePath = @"./data/Transactions2014.csv";
+        //string filePath = @"./data/DodgyTransactions2015.csv";
         Ledger ledger = new Ledger();
 
         if (File.Exists(filePath))
