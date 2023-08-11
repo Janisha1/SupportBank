@@ -2,6 +2,18 @@
 using System.Globalization;
 using SupportBank;
 
+/* Logging */
+using NLog;
+using NLog.Config;
+using NLog.Targets;
+var config = new LoggingConfiguration();
+var target = new FileTarget { FileName = @"C:\Work\Logs\SupportBank.log", Layout = @"${longdate} ${level} - ${logger}: ${message}" };
+config.AddTarget("File Logger", target);
+config.LoggingRules.Add(new LoggingRule("*", LogLevel.Debug, target));
+LogManager.Configuration = config;
+
+/* Program */
+
 var parser = new CSVParser();
 var ledger = parser.Parse();
 var report = new Report();
@@ -30,7 +42,7 @@ static Dictionary<string, decimal> CalculateBalances(Ledger ledger)
     }
 
 Console.WriteLine("Welcome to SupportBank!");
-Console.WriteLine("Choose an option:");
+Console.WriteLine("Choose a report:");
 Console.WriteLine("1. List All");
 Console.WriteLine("2. List [Account]");
 

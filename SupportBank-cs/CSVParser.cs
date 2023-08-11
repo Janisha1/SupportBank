@@ -1,10 +1,15 @@
 using System.Globalization;
+using NLog;
 namespace SupportBank;
 
 public class CSVParser
 {
+    private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
+
+
     public Ledger Parse()
     {
+        Logger.Info("SupportBank CSVParser.Parse() started successfully.");
         string filePath = @"./data/Transactions2014.csv";
         //string filePath = @"./data/DodgyTransactions2015.csv";
         Ledger ledger = new Ledger();
@@ -41,6 +46,7 @@ public class CSVParser
                         DateTimeStyles.None,
                         out transactionDate))
                     {
+                        Logger.Error($"Invalid date format in line {rowCount}: {values[0]}");
                         Console.WriteLine($"Invalid date format in line {rowCount}: {values[0]}");
                         continue;
                     }
@@ -48,6 +54,7 @@ public class CSVParser
                     string amountStr = values[4];
                     if (!decimal.TryParse(amountStr, out decimal amount))
                     {
+                        Logger.Error($"Invalid amount format in line {rowCount}: {amountStr}");
                         Console.WriteLine($"Invalid amount format in line {rowCount}: {amountStr}");
                         continue;
                     }

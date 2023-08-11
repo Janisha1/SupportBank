@@ -3,14 +3,10 @@ using System;
 
 // public class UserInteraction
 // {
-//     public UserChoice
+//     public UserInput
 //     {
 
-//     }
-
-
-   
-    
+//     }    
 // }
             
             
